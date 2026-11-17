@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 75px;
+}
+
+.about-copy p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.about-copy strong {
+  font-weight: 500;
+  color: #d4dcea;
+}
+
+.about-note {
+  font-size: 11px;
+  color: #b4c8e9;
+  margin-top: 25px;
+  line-height: 1.8;
+}
+
+.about-note span {
+  margin-right: 10px;
+  color: var(--blue);
+}
+
+@media (max-width: 1000px) {
+  .about {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 720px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

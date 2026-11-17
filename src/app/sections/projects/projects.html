@@ -1,0 +1,12 @@
+<section id="proyectos" class="section container" aria-labelledby="projects-title">
+  <p class="eyebrow">03 / PROYECTOS</p>
+  <div class="section-heading">
+    <h2 id="projects-title">Del concepto al código<span class="blue">.</span></h2>
+    <p>Una mirada a lo que estoy construyendo.</p>
+  </div>
+  <div class="projects-grid">
+    @for (project of projects(); track project.title; let index = $index) {
+      <app-project-card [project]="project" [number]="index + 1" />
+    }
+  </div>
+</section>

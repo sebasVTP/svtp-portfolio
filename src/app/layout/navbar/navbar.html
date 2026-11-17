@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="container nav-shell">
+    <a class="brand" href="#inicio" aria-label="Sebastián Torreblanca, inicio">st<span>.</span></a>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-controls="navigation"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="menuOpen.set(!menuOpen())"
+    >
+      {{ menuOpen() ? 'Cerrar menú' : 'Abrir menú' }} <span aria-hidden="true">☰</span>
+    </button>
+    <nav id="navigation" aria-label="Navegación principal" [class.open]="menuOpen()">
+      @for (item of items(); track item.id) {
+        <a [href]="'#' + item.id" (click)="menuOpen.set(false)"
+          >{{ item.label }}
+          @if (item.id === 'contacto') {
+            <span aria-hidden="true">↗</span>
+          }
+        </a>
+      }
+    </nav>
+  </div>
+</header>

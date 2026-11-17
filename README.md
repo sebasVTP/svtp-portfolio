@@ -1,59 +1,32 @@
-# MiPortafolio
+# Portafolio de Sebastián Torreblanca
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+Portafolio personal desarrollado con Angular 21 y componentes standalone, sin dependencias UI externas.
 
-## Development server
+## Ejecutar el proyecto
 
-To start a local development server, run:
+Instala las dependencias con `npm ci` y ejecuta `npm start`. Abre la dirección que muestre Angular (normalmente http://localhost:4200).
 
-```bash
-ng serve
-```
+- `npm run build`: genera la versión de producción en `dist/mi-portafolio`.
+- `npm test -- --watch=false`: ejecuta las pruebas una vez.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Organización del frontend
 
-## Code scaffolding
+`src/app/app.ts` y `app.html` componen la página y pasan el contenido a las secciones mediante inputs tipados.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+`src/app/models/portfolio.models.ts` define los contratos TypeScript de navegación, habilidades, proyectos y contactos.
 
-```bash
-ng generate component component-name
-```
+`src/app/data/portfolio.data.ts` contiene los arreglos editables. Los datos son locales; no se necesita un servicio para obtenerlos.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+`src/app/layout/` contiene el navbar y el footer. El navbar administra su propio estado de menú móvil.
 
-```bash
-ng generate --help
-```
+`src/app/sections/` contiene Inicio (hero), Sobre mí (about), Habilidades (skills), Proyectos (projects) y Contacto (contact).
 
-## Building
+`src/app/components/` contiene la tarjeta de proyecto y la ilustración conceptual de tráfico. Cada tarjeta recibe su proyecto mediante un input y conserva su ilustración aunque reordenes la lista.
 
-To build the project run:
+Cada componente tiene sus archivos TypeScript, HTML y CSS. `src/styles.css` conserva únicamente el tema, la base y las clases compartidas (contenedores, encabezados, etiquetas y accesibilidad).
 
-```bash
-ng build
-```
+## Personalizar
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Edita proyectos, habilidades, enlaces y navegación en `src/app/data/portfolio.data.ts`. Reemplaza los contactos y proyectos de ejemplo antes de publicar; marca `example: false` cuando los datos sean reales. La propiedad opcional `url` habilita el enlace de un proyecto y `artwork` selecciona su ilustración (`traffic`, `board` o `data`).
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+El texto de presentación está en `sections/hero/hero.html`, la biografía en `sections/about/about.html` y el nombre del pie en `layout/footer/footer.html`. Los metadatos están en `src/index.html`.

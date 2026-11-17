@@ -1,0 +1,26 @@
+<section id="contacto" class="section contact container" aria-labelledby="contact-title">
+  <div>
+    <p class="eyebrow">04 / CONTACTO</p>
+    <h2 id="contact-title">¿Una idea en mente?<br /><span class="blue">Conversemos.</span></h2>
+    <p>Me interesa conocer nuevos proyectos e intercambiar ideas sobre software y tecnología.</p>
+  </div>
+  <div class="contact-links">
+    @for (contact of links(); track contact.label) {
+      <a
+        [href]="contact.url"
+        [attr.target]="contact.external ? '_blank' : null"
+        rel="noopener noreferrer"
+        ><span
+          ><strong>{{ contact.label }}</strong
+          ><small>{{ contact.detail }}</small></span
+        ><span aria-hidden="true">↗</span>
+        @if (contact.example) {
+          <span class="sr-only"> (dato de ejemplo)</span>
+        }
+      </a>
+    }
+    @if (hasExamples()) {
+      <p class="contact-note">Datos de ejemplo: los enlaces de contacto aún deben actualizarse.</p>
+    }
+  </div>
+</section>

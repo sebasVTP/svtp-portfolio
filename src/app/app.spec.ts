@@ -10,7 +10,7 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const page = fixture.nativeElement as HTMLElement;
-    expect(page.querySelector('h1')?.textContent).toContain('Sebastián');
+    expect(page.querySelector('h1')?.textContent).toContain('Torreblanca');
     for (const link of page.querySelectorAll<HTMLAnchorElement>('nav a')) {
       expect(page.querySelector(link.hash)).not.toBeNull();
     }

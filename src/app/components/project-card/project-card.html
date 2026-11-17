@@ -1,0 +1,50 @@
+<article class="project" [class.featured]="project().featured">
+  <div
+    class="project-art"
+    [class.art-board]="project().artwork === 'board'"
+    [class.art-data]="project().artwork === 'data'"
+    aria-hidden="true"
+  >
+    @if (project().artwork === 'traffic') {
+      <div class="mini-road"><span></span><span></span><span></span></div>
+      <span class="art-label">DIGITAL TWIN / INTERSECCIÓN</span>
+    }
+    @if (project().artwork === 'board') {
+      <div class="board-column"><i></i><i></i></div>
+      <div class="board-column"><i></i><i></i><i></i></div>
+      <div class="board-column"><i></i></div>
+    }
+    @if (project().artwork === 'data') {
+      <div class="chart-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    }
+    <span class="project-number">0{{ number() }}</span>
+  </div>
+  <div class="project-body">
+    <p class="project-category">{{ project().category }}</p>
+    <h3>{{ project().title }}</h3>
+    <p class="project-description">{{ project().description }}</p>
+    <ul class="tags">
+      @for (technology of project().technologies; track technology) {
+        <li>{{ technology }}</li>
+      }
+    </ul>
+    <div class="project-bottom">
+      @if (project().example) {
+        <span class="example-label">Contenido de ejemplo</span>
+      } @else {
+        <span>{{ project().featured ? 'Proyecto destacado' : 'Proyecto personal' }}</span>
+      }
+      @if (project().url) {
+        <a
+          [href]="project().url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="'Ver ' + project().title + ' (abre en otra pestaña)'"
+          >Ver proyecto ↗</a
+        >
+      } @else {
+        <span class="link-pending">Enlace pendiente</span>
+      }
+    </div>
+  </div>
+</article>

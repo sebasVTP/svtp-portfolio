@@ -1,0 +1,44 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.skills-section {
+  background: #0f141e;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.skill-group {
+  border-top: 1px solid #394257;
+  padding-top: 25px;
+}
+
+.skill-symbol {
+  font:
+    22px Consolas,
+    monospace;
+  color: var(--blue);
+}
+
+.skill-group h3 {
+  font-size: 15px;
+  margin: 20px 0;
+}
+
+@media (max-width: 1000px) {
+  .skills-grid {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 720px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 20px;
+  }
+}

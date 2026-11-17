@@ -1,0 +1,186 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.hero {
+  position: relative;
+  min-height: 710px;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 50px;
+  padding-top: 66px;
+  padding-bottom: 100px;
+}
+
+.small-line {
+  width: 24px;
+  height: 1px;
+  background: var(--blue);
+}
+
+h1 {
+  font-size: clamp(44px, 5vw, 70px);
+  letter-spacing: -3.5px;
+  line-height: 1.07;
+  margin: 0 0 25px;
+  font-weight: 700;
+}
+
+.hero-lead {
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  margin: 0 0 18px;
+  color: #b8c1d1;
+}
+
+.hero-lead span {
+  color: #eef2fa;
+}
+
+.intro {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--muted);
+  max-width: 440px;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  gap: 25px;
+  align-items: center;
+  border: 1px solid #354052;
+  border-radius: 5px;
+  padding: 13px 19px;
+  font-size: 13px;
+  font-weight: 600;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  background: #1d2c45;
+}
+
+.primary {
+  background: #a3c3ff;
+  color: #101b30;
+  border-color: #a3c3ff;
+}
+
+.primary:hover {
+  background: #c2d6ff;
+}
+
+.location {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 30px;
+  line-height: 1.8;
+}
+
+.location > span:first-child {
+  color: var(--blue);
+  margin-right: 6px;
+}
+
+.location-divider {
+  padding: 0 8px;
+  color: #44516a;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font:
+    9px Consolas,
+    monospace;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.scroll-cue span {
+  font-size: 20px;
+  color: var(--blue);
+}
+
+@media (min-width: 1600px) {
+  .hero {
+    min-height: 790px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    gap: 25px;
+  }
+
+  h1 {
+    font-size: 52px;
+  }
+
+  .location {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-top: 55px;
+    padding-bottom: 80px;
+  }
+
+  .hero-copy {
+    max-width: 540px;
+  }
+
+  h1 {
+    font-size: clamp(42px, 9vw, 64px);
+    letter-spacing: -2.5px;
+  }
+
+  .hero-lead {
+    font-size: 22px;
+  }
+
+  .scroll-cue {
+    bottom: 20px;
+  }
+
+  .location {
+    max-width: none;
+  }
+
+  .intro {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .actions {
+    gap: 8px;
+  }
+
+  .button {
+    padding: 12px;
+    gap: 12px;
+    font-size: 12px;
+  }
+}

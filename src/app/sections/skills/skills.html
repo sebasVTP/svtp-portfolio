@@ -1,0 +1,22 @@
+<section id="habilidades" class="section skills-section" aria-labelledby="skills-title">
+  <div class="container">
+    <p class="eyebrow">02 / HABILIDADES</p>
+    <div class="section-heading">
+      <h2 id="skills-title">Mi caja de herramientas<span class="blue">.</span></h2>
+      <p>Tecnologías con las que construyo y exploro.</p>
+    </div>
+    <div class="skills-grid">
+      @for (group of groups(); track group.category) {
+        <article class="skill-group">
+          <span class="skill-symbol" aria-hidden="true">{{ group.symbol }}</span>
+          <h3>{{ group.category }}</h3>
+          <ul class="tags">
+            @for (technology of group.technologies; track technology) {
+              <li>{{ technology }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>
